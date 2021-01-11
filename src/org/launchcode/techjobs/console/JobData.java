@@ -130,19 +130,12 @@ public class JobData {
         loadData();
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
         for (HashMap<String, String> row : allJobs) {
-
             for (Map.Entry <String,String> entry: row.entrySet()) {
-               Boolean jobAdded = false;
-                while (!jobAdded) {
-                    if (entry.getKey().contains(value)) {
+               if (entry.getValue().contains(value)) {
                         jobs.add(row);
-                        jobAdded = true;
-                    } else if (entry.getValue().contains(value)) {
-                        jobs.add(row);
-                        jobAdded = true;
+                        break;
                     }
-                }
-            }
+               }
         }
         return jobs;
         }
