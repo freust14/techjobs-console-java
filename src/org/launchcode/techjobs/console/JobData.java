@@ -40,7 +40,8 @@ public class JobData {
                 values.add(aValue);
             }
         }
-
+        // Bonus mission 1: put returned list in alphabetical order
+        Collections.sort(values);
         return values;
     }
 
@@ -48,8 +49,10 @@ public class JobData {
 
         // load data, if not already loaded
         loadData();
-
-        return allJobs;
+        //Bonus mission 2; use clone method to make a copy of allJobs arrayList
+        ArrayList<HashMap<String, String>> copyOfAllJobs = (ArrayList<HashMap<String, String>>) allJobs.clone();
+        return copyOfAllJobs;
+//        return allJobs;
     }
 
     /**
